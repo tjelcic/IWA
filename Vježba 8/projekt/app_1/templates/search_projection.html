@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Projections</h2>
+
+<form method="POST">{% csrf_token %}
+
+    {% for proj in tickets.all %}
+        
+        {{ proj.movie_name }} <a href="{% url 'count_projections' proj.id %}">View number of tickets</a><br>
+
+    {% endfor %}<br>
+    
+</form>
+{% endblock %}
+

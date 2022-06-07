@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<h2>Insert projection </h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}<br>
+    <input type="submit" value="Add">
+</form>
+
+{% endblock %}

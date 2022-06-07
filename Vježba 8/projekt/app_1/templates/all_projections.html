@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>List</h1>
+{% for projection in data %}
+{{projection.movie_name}}  <a href="{%url 'confirm_deletion' projection.id %}">delete</a><br>
+
+{% endfor %}
+{% endblock %}

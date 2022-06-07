@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>Home page</h2>
+
+{% for proj in projection %}
+
+    {{proj.movie_name}} <a href="{% url 'buy' proj.id %}">Buy ticket</a> <br>
+
+{% endfor %}
+{% endblock %}

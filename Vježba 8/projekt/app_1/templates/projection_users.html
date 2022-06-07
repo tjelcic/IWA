@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+      text-align: left;    
+    }
+</style>
+
+
+<h2>List of all users and projections </h2><br><br>
+
+<table style="width:40%">
+    <tr>
+        <th>Email</th>
+        <th>Film name</th>
+        <th>Time</th>
+        <th>Capacity</th>
+        <th>Seat number</th>
+    </tr>
+    <form method="POST">
+        {% for ticket in tickets.all %}
+        <tr>
+            <td> {{ticket.user.email}} </td> 
+            <td> {{ticket.projection.movie_name}} </td>
+            <td> {{ticket.projection.movie_time}} </td>
+            <td> {{ticket.projection.capacity}} </td>
+            <td> {{ticket.seat_number}} </td>
+        </tr>
+
+    {% endfor %}
+    </form>
+</table>
+{% endblock %}
