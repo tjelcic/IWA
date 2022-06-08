@@ -37,8 +37,6 @@ class Person(AbstractUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
 
-    USEARNAME_FIELD = 'email' 
-
     objects = MyPersonManager()
 
     def __str__(self):
